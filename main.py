@@ -56,6 +56,7 @@ def login():
         return render_template('login.html', message="Неправильный логин или пароль", form=form)
     return render_template('login.html', title='Авторизация', form=form)
 
+
 @app.route('/logout')
 def logout():
     logout_user()
@@ -64,7 +65,13 @@ def logout():
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', route='static/img/image.png')
+
+
+@app.route('/info', methods=['POST', 'GET'])
+def info():
+    return render_template('info.html')
+
 
 
 

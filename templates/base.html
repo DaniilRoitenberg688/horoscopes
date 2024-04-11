@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <nav class="nav nav-justified">
+    <nav class="nav nav-justified navbar-dark bg-warning">
         <p class="nav-item">
             <a class="navbar-brand" href="/">Horoscopes</a>
             {% if current_user.is_authenticated and not current_user.redactor %}
@@ -44,5 +44,9 @@
 <main class="container" role="main">
     {% block content %}{% endblock %}
 </main>
+
+<footer class="footer text-center">
+    <p class="footer_p"><br></p>
+</footer>
 </body>
 </html>

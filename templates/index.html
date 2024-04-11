@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="text-center">Вы лев</h1>
-<img src="static/img/image.png" class="mx-auto d-block">
+<h1 class="text-center">{{sign}}</h1>
+<img src="{{route}}" class="mx-auto d-block">
 <p></p>
 <h1 class="text-center">Ваш гороскоп на сегодня:</h1>
-<p></p>
 <p class="text-center">{{ horoscope }}</p>
+<p></p>
+<h1 class="text-center">Характеристика знака зодиака</h1>
+<p class="text-center"></p>
+<p></p>
+<h1 class="text-center">Гороскоп на год</h1>
+<p class="text-center"></p>
 
 
 
