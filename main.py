@@ -1,8 +1,10 @@
 from flask import Flask, render_template, redirect
-from flask_login import LoginManager, login_user, logout_user
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 
 from data import db_session
+from data.horoscopes import Horoscope
 from data.users import User
+from forms.horoscope import Create
 from forms.user import Register, Login
 
 app = Flask(__name__)
@@ -58,6 +60,7 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect("/")
@@ -65,7 +68,22 @@ def logout():
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html', route='static/img/image.png')
+    if current_user.is_authenticated:
+        sess = db_session.create_session()
+        sign = current_user.zodiac_sign
+        horoscope = sess.query(Horoscope).filter(Horoscope.sign == sign).first()
+
+        with open(f'static/horoscopes_data/{sign}.txt', 'r', encoding='utf8') as file:
+            lines = file.readlines()
+            index = lines.index('\n')
+            characteristic = ''.join(lines[:index])
+            year_horoscope = ''.join(lines[index:])
+
+        return render_template('index.html', sign=sign, route=f'static/img/{horoscope.image}',
+                               day_horoscope=horoscope.day_horoscope, characteristic=characteristic,
+                               year_horoscope=year_horoscope)
+
+    return render_template('index.html')
 
 
 @app.route('/info', methods=['POST', 'GET'])
@@ -73,6 +91,24 @@ def info():
     return render_template('info.html')
 
 
+@app.route('/create', methods=['POST', 'GET'])
+def create_horoscope():
+    form = Create()
+    if form.validate_on_submit():
+        with open(f'static/horoscopes_data/{form.sign.data}.txt', 'w', encoding='utf8') as file:
+            file.write(form.characteristic.data)
+            file.write('\n\n')
+            file.write(form.year_horoscope.data)
+        sess = db_session.create_session()
+        horoscope = Horoscope(sign=form.sign.data,
+                              image=form.image.data,
+                              day_horoscope=form.day_horoscope.data,
+                              data=f'{form.sign.data}.txt')
+        sess.merge(horoscope)
+        sess.commit()
+
+        return redirect('/')
+    return render_template('create_horoscope.html', form=form)
 
 
 def main():
