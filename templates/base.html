@@ -46,8 +46,18 @@
     {% block content %}{% endblock %}
 </main>
 
-<footer class="footer text-center">
-    <p class="footer_p"><br></p>
+{% if current_user.is_authenticated %}
+<footer class="footer" style="background-color: grey;">
+    <div class="foot">
+        <ul class="nav nav-tabs nav-justified">
+            {% for item1, item2 in data %}
+            <li class="nav-item">
+                <a class="nav-link" href="/{{ item1 }}" style="color: white">{{ item2 }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </footer>
+{% endif %}
 </body>
 </html>

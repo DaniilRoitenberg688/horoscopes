@@ -11,6 +11,12 @@ app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+data = [['aries', 'Овен'], ['taurus', 'Телец'],
+        ['gemini', 'Близнецы'], ['cancer', 'Рак'],
+        ['leo', 'Лев'], ['virgo', 'Дева'],
+        ['libra', 'Весы'], ['scorpio', 'Скорпион'],
+        ['sagittarius', 'Стрелец'], ['capricorn', 'Козерог'],
+        ['aquarius', 'Водолей'], ['pisces', 'Рыбы']]
 
 
 @login_manager.user_loader
@@ -68,6 +74,7 @@ def logout():
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    global data
     if current_user.is_authenticated:
         sess = db_session.create_session()
         sign = current_user.zodiac_sign
@@ -81,9 +88,26 @@ def index():
 
         return render_template('index.html', sign=sign, route=f'static/img/{horoscope.image}',
                                day_horoscope=horoscope.day_horoscope, characteristic=characteristic,
-                               year_horoscope=year_horoscope)
+                               year_horoscope=year_horoscope, data=data)
 
     return render_template('index.html')
+
+
+@app.route('/<sign>', methods=['POST', 'GET'])
+def show_sign(sign):
+    if current_user.is_authenticated:
+        sess = db_session.create_session()
+        horoscope = sess.query(Horoscope).filter(Horoscope.sign == sign).first()
+
+        with open(f'static/horoscopes_data/{sign}.txt', 'r', encoding='utf8') as file:
+            lines = file.readlines()
+            index = lines.index('\n')
+            characteristic = ''.join(lines[:index])
+            year_horoscope = ''.join(lines[index:])
+
+        return render_template('index.html', sign=sign, route=f'static/img/{horoscope.image}',
+                               day_horoscope=horoscope.day_horoscope, characteristic=characteristic,
+                               year_horoscope=year_horoscope, data=data)
 
 
 @app.route('/info', methods=['POST', 'GET'])
@@ -109,6 +133,11 @@ def create_horoscope():
 
         return redirect('/')
     return render_template('create_horoscope.html', form=form)
+
+
+@app.route('/edit', methods=['POST', 'GET'])
+def edit():
+    return 'not yet'
 
 
 def main():
