@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Создание гороскопа</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{ form.aries.label }}<br>
+        {{ form.aries(class="form-control") }}<br>
+        {% for error in form.aries.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.taurus.label }}<br>
+        {{ form.taurus(class="form-control") }}<br>
+        {% for error in form.taurus.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.gemini.label }}<br>
+        {{ form.gemini(class="form-control") }}<br>
+        {% for error in form.gemini.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.cancer.label }}<br>
+        {{ form.cancer(class="form-control") }}<br>
+        {% for error in form.cancer.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.leo.label }}<br>
+        {{ form.leo(class="form-control") }}<br>
+        {% for error in form.leo.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.virgo.label }}<br>
+        {{ form.virgo(class="form-control") }}<br>
+        {% for error in form.virgo.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.libra.label }}<br>
+        {{ form.libra(class="form-control") }}<br>
+        {% for error in form.libra.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.scorpio.label }}<br>
+        {{ form.scorpio(class="form-control") }}<br>
+        {% for error in form.scorpio.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.sagittarius.label }}<br>
+        {{ form.sagittarius(class="form-control") }}<br>
+        {% for error in form.sagittarius.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.capricorn.label }}<br>
+        {{ form.capricorn(class="form-control") }}<br>
+        {% for error in form.capricorn.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.aquarius.label }}<br>
+        {{ form.aquarius(class="form-control") }}<br>
+        {% for error in form.aquarius.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.pisces.label }}<br>
+        {{ form.pisces(class="form-control") }}<br>
+        {% for error in form.pisces.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+
+
+</form>
+{% endblock %}

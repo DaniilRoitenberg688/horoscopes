@@ -4,7 +4,7 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from data import db_session
 from data.horoscopes import Horoscope
 from data.users import User
-from forms.horoscope import Create
+from forms.horoscope import Create, EditAll, EditOne
 from forms.user import Register, Login
 
 app = Flask(__name__)
@@ -135,9 +135,36 @@ def create_horoscope():
     return render_template('create_horoscope.html', form=form)
 
 
+@app.route('/edit_all', methods=['POST', 'GET'])
+def edit_all():
+    form = EditAll()
+    if form.validate_on_submit():
+        sess = db_session.create_session()
+        all_horoscopes = sess.query(Horoscope)
+        for horoscope in all_horoscopes:
+            sign = horoscope.sign
+            horoscope.day_horoscope = form.data[sign]
+            sess.commit()
+        return redirect('/')
+    return render_template('edit_all.html', form=form, data=data)
+
+
+
+
 @app.route('/edit', methods=['POST', 'GET'])
 def edit():
-    return 'not yet'
+    form = EditOne()
+    if form.validate_on_submit():
+        sess = db_session.create_session()
+        all_names = [i[0] for i in sess.query(Horoscope.sign)]
+
+        if form.sign.data not in all_names:
+            return render_template('edit_one.html', form=form, message='No such sign')
+        zodiac_sign = sess.query(Horoscope).filter(Horoscope.sign == form.sign.data).first()
+        zodiac_sign.day_horoscope = form.day_horoscope.data
+        sess.commit()
+        return redirect('/')
+    return render_template('edit_one.html', form=form)
 
 
 def main():

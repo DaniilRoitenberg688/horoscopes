@@ -21,10 +21,8 @@
             <a class="navbar-brand" href="/info">Information</a>
             {% elif current_user.is_authenticated and current_user.redactor %}
             <a class="btn btn-primary" href="/edit">Edit</a>
-            <a class="btn btn-primary" href="/create">Create</a>
+            <a class="btn btn-primary" href="/edit_all">Edit all</a>
             {% endif %}
-
-
         </p>
 
 

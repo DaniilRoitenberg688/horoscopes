@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Создание гороскопа</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.sign.label }}<br>
+        {{ form.sign(class="form-control") }}<br>
+        {% for error in form.sign.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>
+        {{ form.day_horoscope.label }}<br>
+        {{ form.day_horoscope(class="form-control") }}<br>
+        {% for error in form.day_horoscope.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+
+</form>
+{% endblock %}

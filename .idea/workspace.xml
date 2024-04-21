@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Теперь пользователи могут смотреть гороскопы">
-      <change afterPath="$PROJECT_DIR$/static/img/aquarius.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/aries.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/cancer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/capricorn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/gemini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/libra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/sagittarius.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/scorpio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/taurus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/virgo.png" afterDir="false" />
+    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Добавлены все данные для гороскопов и сделан футер страницы">
+      <change afterPath="$PROJECT_DIR$/templates/edit_all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_one.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/horoscopes.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/horoscopes.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/horoscope.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/horoscope.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/horoscopes_data/sagittarius.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/horoscopes_data/sagittarius.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +29,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -171,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712906095342</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавлены все данные для гороскопов и сделан футер страницы">
+      <option name="closed" value="true" />
+      <created>1713615235766</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713615235767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +191,7 @@
     <MESSAGE value="форма входа" />
     <MESSAGE value="Страничка с информацией о сайте" />
     <MESSAGE value="Теперь пользователи могут смотреть гороскопы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Теперь пользователи могут смотреть гороскопы" />
+    <MESSAGE value="Добавлены все данные для гороскопов и сделан футер страницы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены все данные для гороскопов и сделан футер страницы" />
   </component>
 </project>
