@@ -7,6 +7,8 @@ from data.users import User
 from forms.horoscope import Create, EditAll, EditOne
 from forms.user import Register, Login
 
+from waitress import serve
+
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -88,9 +90,9 @@ def index():
 
         return render_template('index.html', sign=sign, route=f'static/img/{horoscope.image}',
                                day_horoscope=horoscope.day_horoscope, characteristic=characteristic,
-                               year_horoscope=year_horoscope, data=data)
+                               year_horoscope=year_horoscope, data=data, title='Гороскопы', is_footer=True)
 
-    return render_template('index.html')
+    return render_template('index.html', title='Гороскопы')
 
 
 @app.route('/<sign>', methods=['POST', 'GET'])
@@ -98,6 +100,10 @@ def show_sign(sign):
     if current_user.is_authenticated:
         sess = db_session.create_session()
         horoscope = sess.query(Horoscope).filter(Horoscope.sign == sign).first()
+        rus_sign = ''
+        for i, g in data:
+            if i == sign:
+                rus_sign = g
 
         with open(f'static/horoscopes_data/{sign}.txt', 'r', encoding='utf8') as file:
             lines = file.readlines()
@@ -107,12 +113,12 @@ def show_sign(sign):
 
         return render_template('index.html', sign=sign, route=f'static/img/{horoscope.image}',
                                day_horoscope=horoscope.day_horoscope, characteristic=characteristic,
-                               year_horoscope=year_horoscope, data=data)
+                               year_horoscope=year_horoscope, data=data, title=rus_sign, is_footer=True)
 
 
 @app.route('/info', methods=['POST', 'GET'])
 def info():
-    return render_template('info.html')
+    return render_template('info.html', title='Информация')
 
 
 @app.route('/create', methods=['POST', 'GET'])
@@ -132,7 +138,7 @@ def create_horoscope():
         sess.commit()
 
         return redirect('/')
-    return render_template('create_horoscope.html', form=form)
+    return render_template('create_horoscope.html', form=form, title='Создание')
 
 
 @app.route('/edit_all', methods=['POST', 'GET'])
@@ -146,8 +152,7 @@ def edit_all():
             horoscope.day_horoscope = form.data[sign]
             sess.commit()
         return redirect('/')
-    return render_template('edit_all.html', form=form, data=data)
-
+    return render_template('edit_all.html', form=form, data=data, title="Редактировать все")
 
 
 
@@ -164,12 +169,12 @@ def edit():
         zodiac_sign.day_horoscope = form.day_horoscope.data
         sess.commit()
         return redirect('/')
-    return render_template('edit_one.html', form=form)
+    return render_template('edit_one.html', form=form, title='Редактировать один')
 
 
 def main():
     db_session.global_init('db/horoscopes.db')
-    app.run()
+    app.run('127.0.0.1', 5000)
 
 
 if __name__ == '__main__':

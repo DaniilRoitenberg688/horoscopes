@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Добавлены все данные для гороскопов и сделан футер страницы">
-      <change afterPath="$PROJECT_DIR$/templates/edit_all.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit_one.html" afterDir="false" />
+    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Есть возможность редактировать ежедневные гороскопы: либо все вместе, либо каждый по-отдельности">
+      <change afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/horoscopes.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/horoscopes.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/horoscope.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/horoscope.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/horoscopes_data/sagittarius.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/horoscopes_data/sagittarius.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,31 +38,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.create_map_image.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/daniil/Desktop/My_works/python_projects/goroskopy/static/img",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.create_map_image.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/daniil/Desktop/My_works/python_projects/goroskopy&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static" />
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\img" />
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\horoscopes_data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\horoscopes_data" />
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\img" />
+      <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\horoscopes_data" />
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\css" />
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.server">
     <configuration name="create_map_image" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="goroskopy" />
       <option name="ENV_FILES" value="" />
@@ -87,7 +86,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="goroskopy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,7 +99,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,7 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.server" />
         <item itemvalue="Python.create_map_image" />
       </list>
     </recent_temporary>
@@ -172,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713615235767</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Есть возможность редактировать ежедневные гороскопы: либо все вместе, либо каждый по-отдельности">
+      <option name="closed" value="true" />
+      <created>1713727177216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713727177216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +199,7 @@
     <MESSAGE value="Страничка с информацией о сайте" />
     <MESSAGE value="Теперь пользователи могут смотреть гороскопы" />
     <MESSAGE value="Добавлены все данные для гороскопов и сделан футер страницы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены все данные для гороскопов и сделан футер страницы" />
+    <MESSAGE value="Есть возможность редактировать ежедневные гороскопы: либо все вместе, либо каждый по-отдельности" />
+    <option name="LAST_COMMIT_MESSAGE" value="Есть возможность редактировать ежедневные гороскопы: либо все вместе, либо каждый по-отдельности" />
   </component>
 </project>

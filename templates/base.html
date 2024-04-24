@@ -10,6 +10,7 @@
           crossorigin="anonymous">
 
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="static/img/logo.png">
     <title>{{ title }}</title>
 </head>
 <body>
@@ -44,7 +45,7 @@
     {% block content %}{% endblock %}
 </main>
 
-{% if current_user.is_authenticated %}
+{% if current_user.is_authenticated and is_footer%}
 <footer class="footer" style="background-color: grey;">
     <div class="foot">
         <ul class="nav nav-tabs nav-justified">
