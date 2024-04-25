@@ -17,12 +17,12 @@
 <header>
     <nav class="nav nav-justified navbar-dark bg-warning">
         <p class="nav-item">
-            <a class="navbar-brand" href="/">Horoscopes</a>
+            <a class="navbar-brand" href="/">Гороскопы</a>
             {% if current_user.is_authenticated and not current_user.redactor %}
-            <a class="navbar-brand" href="/info">Information</a>
+            <a class="navbar-brand" href="/info">Информация</a>
             {% elif current_user.is_authenticated and current_user.redactor %}
-            <a class="btn btn-primary" href="/edit">Edit</a>
-            <a class="btn btn-primary" href="/edit_all">Edit all</a>
+            <a class="btn btn-primary" href="/edit">Изменить</a>
+            <a class="btn btn-primary" href="/edit_all">Изменить все</a>
             {% endif %}
         </p>
 
@@ -30,12 +30,12 @@
         {% if current_user.is_authenticated %}
         <a class="h2 nav-item">{{ current_user.name }}</a>
         <div class="nav-item">
-            <a class="btn btn-danger h3" href="/logout">Exit</a>
+            <a class="btn btn-danger h3" href="/logout">Выйти</a>
         </div>
         {% else %}
         <p class="nav-item">
-            <a class="btn btn-primary" href="/register">Register</a>
-            <a class="btn btn-success" href="/login">Login</a>
+            <a class="btn btn-primary" href="/register">Зарегистрироваться</a>
+            <a class="btn btn-success" href="/login">Войти</a>
             {% endif %}
         </p>
     </nav>

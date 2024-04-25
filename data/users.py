@@ -7,23 +7,44 @@ from .db_session import SqlAlchemyBase
 
 
 class User(SqlAlchemyBase, UserMixin, SerializerMixin):
+    """Содель пользователя"""
+
     __tablename__ = 'Users'
+
+    # айди
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
+
+    # имя
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    # фамилия
     surname = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    # почта
     email = sqlalchemy.Column(sqlalchemy.String)
+
+    # дата рождения
     birthday = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
+
+    # пароль
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    # есть ли у пользователя возможность редактировать гороскопы
     redactor = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+
+    # знак зодиака
     zodiac_sign = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
     def set_password(self, password):
+        """Функция для создания пароля"""
         self.hashed_password = generate_password_hash(password)
 
     def check_password(self, password):
+        """Функция для проверки пароля"""
         return check_password_hash(self.hashed_password, password)
 
     def create_zodiac_sign(self, date: str):
+        """Функция для определения знака зодиака по дате рождения"""
         _, month, day = date.split('-')
 
         day, month = int(day), int(month)

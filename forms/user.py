@@ -4,19 +4,43 @@ from wtforms.validators import DataRequired
 
 
 class Register(FlaskForm):
-    name = StringField('Your name', validators=[DataRequired()])
-    surname = StringField('Your surname', validators=[DataRequired()])
-    email = EmailField('Your email', validators=[DataRequired()])
-    birthday = DateField('Yor birthday', validators=[DataRequired()])
-    password = PasswordField('Your password', validators=[DataRequired()])
-    password_again = PasswordField('Again', validators=[DataRequired()])
-    submit = SubmitField('REGISTER')
+    """Форма регистрации"""
+
+    # имя
+    name = StringField('Ваше имя', validators=[DataRequired()])
+
+    # фамилия
+    surname = StringField('Ваша фамилия', validators=[DataRequired()])
+
+    # почта
+    email = EmailField('Почта', validators=[DataRequired()])
+
+    # день рождения
+    birthday = DateField('Дата рождения', validators=[DataRequired()])
+
+    # пароль
+    password = PasswordField('Пароль', validators=[DataRequired()])
+
+    # пароль еще раз
+    password_again = PasswordField('Пароль еще раз', validators=[DataRequired()])
+
+    # кнопка подтверждения
+    submit = SubmitField('Зарегистрироваться')
 
 
 class Login(FlaskForm):
-    email = EmailField('Your email', validators=[DataRequired()])
-    password = PasswordField('Your password', validators=[DataRequired()])
+    """Форма входа"""
+
+    # почта
+    email = EmailField('Почта', validators=[DataRequired()])
+
+    # пароль
+    password = PasswordField('Пароль', validators=[DataRequired()])
+
+    # галочка запомни меня
     remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('LOGIN')
+
+    # кнопка подтверждения
+    submit = SubmitField('Войти')
 
 

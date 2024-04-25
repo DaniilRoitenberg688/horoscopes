@@ -6,3 +6,5 @@ answer = requests.get(response)
 
 with open('static/img/map.png', 'wb') as file:
     file.write(answer.content)
+
+

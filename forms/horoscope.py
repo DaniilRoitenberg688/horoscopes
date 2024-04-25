@@ -4,15 +4,30 @@ from wtforms.validators import DataRequired
 
 
 class Create(FlaskForm):
+    """Форма для создания гороскопа"""
+
+    # знак
     sign = StringField('Sign name', validators=[DataRequired()])
+
+    # имя картинки
     image = StringField('Image route', validators=[DataRequired()])
+
+    # гороскоп на сегодня
     day_horoscope = TextAreaField('Day horoscope', validators=[DataRequired()])
+
+    # характеристика знака зодиака
     characteristic = TextAreaField('Characteristic', validators=[DataRequired()])
+
+    # гороскоп на год
     year_horoscope = TextAreaField('Year horoscope', validators=[DataRequired()])
+
+    # кнопка подтверждения
     submit = SubmitField('CREATE', validators=[DataRequired()])
 
 
 class EditAll(FlaskForm):
+    """Форма для редактирования всех гороскопов разом"""
+
     aries = TextAreaField('Овен', validators=[DataRequired()])
     taurus = TextAreaField('Телец', validators=[DataRequired()])
     gemini = TextAreaField('Близнецы', validators=[DataRequired()])
@@ -29,6 +44,12 @@ class EditAll(FlaskForm):
 
 
 class EditOne(FlaskForm):
+    """Форма для редактирования одного гороскопа"""
+    # название знака зодиака
     sign = StringField('Sign name', validators=[DataRequired()])
+
+    # данные гороскопа
     day_horoscope = TextAreaField('Day horoscope', validators=[DataRequired()])
+
+    # кнопка подтверждения
     submit = SubmitField('EDIT', validators=[DataRequired()])
