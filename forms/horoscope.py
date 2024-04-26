@@ -7,19 +7,19 @@ class Create(FlaskForm):
     """Форма для создания гороскопа"""
 
     # знак
-    sign = StringField('Sign name', validators=[DataRequired()])
+    sign = StringField('Название знака зодиака', validators=[DataRequired()])
 
     # имя картинки
-    image = StringField('Image route', validators=[DataRequired()])
+    image = StringField('Путь до картинки', validators=[DataRequired()])
 
     # гороскоп на сегодня
-    day_horoscope = TextAreaField('Day horoscope', validators=[DataRequired()])
+    day_horoscope = TextAreaField('Ежедневный гороскоп', validators=[DataRequired()])
 
     # характеристика знака зодиака
-    characteristic = TextAreaField('Characteristic', validators=[DataRequired()])
+    characteristic = TextAreaField('Характеристика знака зодиака', validators=[DataRequired()])
 
     # гороскоп на год
-    year_horoscope = TextAreaField('Year horoscope', validators=[DataRequired()])
+    year_horoscope = TextAreaField('Гороскоп на год', validators=[DataRequired()])
 
     # кнопка подтверждения
     submit = SubmitField('CREATE', validators=[DataRequired()])
@@ -40,16 +40,16 @@ class EditAll(FlaskForm):
     capricorn = TextAreaField('Козерог', validators=[DataRequired()])
     aquarius = TextAreaField('Водолей', validators=[DataRequired()])
     pisces = TextAreaField('Рыбы', validators=[DataRequired()])
-    submit = SubmitField('EDIT', validators=[DataRequired()])
+    submit = SubmitField('Изменить', validators=[DataRequired()])
 
 
 class EditOne(FlaskForm):
     """Форма для редактирования одного гороскопа"""
     # название знака зодиака
-    sign = StringField('Sign name', validators=[DataRequired()])
+    sign = StringField('Название знака зодиака', validators=[DataRequired()])
 
     # данные гороскопа
-    day_horoscope = TextAreaField('Day horoscope', validators=[DataRequired()])
+    day_horoscope = TextAreaField('Гороскоп на день', validators=[DataRequired()])
 
     # кнопка подтверждения
-    submit = SubmitField('EDIT', validators=[DataRequired()])
+    submit = SubmitField('Изменить', validators=[DataRequired()])

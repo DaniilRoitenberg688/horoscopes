@@ -5,6 +5,7 @@ from flask_restful import Api
 from data import db_session
 from data.horoscope_resource import HoroscopeListResource, HoroscopeResource
 from data.horoscopes import Horoscope
+from data.user_resource import UserResource, UserListResource
 from data.users import User
 from forms.horoscope import Create, EditAll, EditOne
 from forms.user import Register, Login
@@ -62,6 +63,7 @@ def register():
         if form.email.data == 'daniilroitenberg@yandex.ru':
             user.redactor = True
         user.set_password(form.password.data)
+        print(form.birthday.data)
         user.create_zodiac_sign(str(form.birthday.data))
         sess.add(user)
         sess.commit()
@@ -176,7 +178,6 @@ def create_horoscope():
 
     # проверяем нажата ли кнопка
     if form.validate_on_submit():
-
         # записываем данные годового гороскопа и характеристики знака зодиака в файл
         with open(f'static/horoscopes_data/{form.sign.data}.txt', 'w', encoding='utf8') as file:
             file.write(form.characteristic.data)
@@ -248,6 +249,10 @@ def main():
     # подключаем апи гороскопов
     api.add_resource(HoroscopeResource, '/api/horoscopes/<sign>')
     api.add_resource(HoroscopeListResource, '/api/horoscopes/')
+
+    # подключаем апи пользователя
+    api.add_resource(UserResource, '/api/users/<id>')
+    api.add_resource(UserListResource, '/api/users/')
 
     # запускаем приложение
     app.run('127.0.0.1', 5000)

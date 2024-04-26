@@ -3,7 +3,7 @@
 
 {% if current_user.is_authenticated %}
 <h1 class="text-center">{{sign}}</h1>
-<img src="{{route}}" class="mx-auto d-block">
+<img class="mx-auto d-block" src="{{route}}">
 <p></p>
 <h1 class="text-center">Ваш гороскоп на сегодня:</h1>
 <p class="text-center horo_p">{{ day_horoscope }}</p>
@@ -14,6 +14,7 @@
 <h1 class="text-center">Гороскоп на год:</h1>
 <p class="text-center horo_p"> {{ year_horoscope }}</p>
 {% else %}
-<h1 class="text-center">Вам надо зарегистрироваться или войти для того, чтобы погрузиться в увлекательный мир гороскопов и астрологии</h1>
+<h1 class="text-center">Вам надо зарегистрироваться или войти для того, чтобы погрузиться в увлекательный мир гороскопов
+    и астрологии</h1>
 {% endif %}
 {% endblock %}

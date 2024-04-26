@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Подготовка для загрузки в облако">
-      <change afterPath="$PROJECT_DIR$/data/horoscope_resource.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/horoscopes_reqparse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_horoscopes_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/доказательство.mp4" afterDir="false" />
+    <list default="true" id="0c8facdc-d44b-404e-89b9-9136e37a0efe" name="Changes" comment="Ресурс гороскопов, комментарии и небольшие корректировки">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_users_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/user_resource.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/users_reqparse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_map_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_map_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/horoscopes.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/horoscopes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/horoscope_resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/horoscope_resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/horoscopes_reqparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/horoscopes_reqparse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/horoscopes.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/horoscopes.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forms/horoscope.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/horoscope.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_horoscopes_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_horoscopes_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +51,10 @@
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.test_horoscopes_api.executor": "Run",
+    "Python.test_users_api.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/daniil/Desktop/My_works/python_projects/goroskopy",
+    "last_opened_file_path": "C:/Users/daniil/Desktop/My_works/python_projects/cfqn",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -74,7 +71,7 @@
       <recent name="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\static\css" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.test_horoscopes_api">
     <configuration name="create_map_image" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="goroskopy" />
       <option name="ENV_FILES" value="" />
@@ -97,28 +94,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="goroskopy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="goroskopy" />
       <option name="ENV_FILES" value="" />
@@ -132,7 +107,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\daniil\Desktop\My_works\python_projects\goroskopy\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,10 +138,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_users_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="goroskopy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/test_users_api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.test_horoscopes_api" />
+        <item itemvalue="Python.test_users_api" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.create_map_image" />
       </list>
@@ -268,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713947788916</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ресурс гороскопов, комментарии и небольшие корректировки">
+      <option name="closed" value="true" />
+      <created>1714075094980</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714075094980</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -293,6 +298,7 @@
     <MESSAGE value="Добавил requirements" />
     <MESSAGE value="Добавил start.sh" />
     <MESSAGE value="Подготовка для загрузки в облако" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подготовка для загрузки в облако" />
+    <MESSAGE value="Ресурс гороскопов, комментарии и небольшие корректировки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ресурс гороскопов, комментарии и небольшие корректировки" />
   </component>
 </project>

@@ -42,5 +42,3 @@ class Login(FlaskForm):
 
     # кнопка подтверждения
     submit = SubmitField('Войти')
-
-
