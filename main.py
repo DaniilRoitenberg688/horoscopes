@@ -9,6 +9,7 @@ from data.user_resource import UserResource, UserListResource
 from data.users import User
 from forms.horoscope import Create, EditAll, EditOne
 from forms.user import Register, Login
+from reload_horoscopes import reload
 
 # создаем и настраиваем приложение
 app = Flask(__name__)
@@ -88,6 +89,7 @@ def login():
         user = db_sess.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
+
             return redirect("/")
         return render_template('login.html', message="Неправильный логин или пароль", form=form)
     return render_template('login.html', title='Авторизация', form=form)
@@ -240,6 +242,12 @@ def edit():
         sess.commit()
         return redirect('/')
     return render_template('edit_one.html', form=form, title='Редактировать один')
+
+
+@app.route('/edit_auto', methods=['POST', 'GET'])
+def edit_auto():
+    reload()
+    return redirect('/')
 
 
 def main():
